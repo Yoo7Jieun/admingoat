@@ -12,6 +12,9 @@ export default function Home() {
 					<a href="/responses" className="flex h-12 items-center justify-center rounded-full border border-black text-black px-6">
 						응답 확인하기
 					</a>
+					<a href="/db-test" className="flex h-12 items-center justify-center rounded-full border border-blue-600 text-blue-600 px-6 hover:bg-blue-50">
+						DB 테스트
+					</a>
 				</div>
 			</main>
 		</div>
