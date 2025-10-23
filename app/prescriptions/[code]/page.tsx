@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 export default async function PrescriptionDetailPage({ params }: { params: Promise<{ code: string }> }) {
 	const { code } = await params;
 
-	const prescription = await prisma.prescription.findUnique({
+	const prescription = await prisma.prescriptions.findUnique({
 		where: {
 			code: code,
 		},

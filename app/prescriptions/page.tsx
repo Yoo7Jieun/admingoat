@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default async function PrescriptionsPage() {
 	// Fetch all prescription codes from the database
-	const prescriptions = await prisma.prescription.findMany({
+	const prescriptions = await prisma.prescriptions.findMany({
 		select: {
 			code: true,
 			name: true,

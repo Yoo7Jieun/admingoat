@@ -2,7 +2,7 @@ import { prisma } from "../../lib/prisma";
 import Link from "next/link";
 
 export default async function ResponsesPage() {
-	const responses = await prisma.user.findMany({
+	const responses = await prisma.results.findMany({
 		orderBy: {
 			created_at: "desc",
 		},

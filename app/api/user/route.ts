@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
 	try {
 		const body = await request.json();
 
-		const user = await prisma.user.create({
+		const user = await prisma.results.create({
 			data: {
 				name: body.name || null,
 				code: body.code || null,
