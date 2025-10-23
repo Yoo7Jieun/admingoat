@@ -14,7 +14,7 @@ model results {
   updated_at DateTime @db.Timestamptz(6)
   answers    Json
   code       String?
-  name       String?
+  nickname   String?
   comment    String?
 }
 

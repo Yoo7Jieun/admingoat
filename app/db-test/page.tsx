@@ -7,7 +7,7 @@ const QUESTIONS = ["p1", "p2", "e1", "e2", "s1", "s2", "s3", "s4", "s5", "s6", "
 
 export default function DBTestPage() {
 	const [userData, setUserData] = useState({
-		name: "",
+		nickname: "",
 		code: "",
 		comment: "",
 	});
@@ -46,7 +46,7 @@ export default function DBTestPage() {
 			if (response.ok) {
 				setMessage("✅ User 데이터 저장 성공!");
 				setUserData({
-					name: "",
+					nickname: "",
 					code: "",
 					comment: "",
 				});
@@ -84,8 +84,8 @@ export default function DBTestPage() {
 					<form onSubmit={handleUserSubmit} className="space-y-4">
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							<div>
-								<label className="block text-sm font-semibold text-gray-900 mb-1">Name</label>
-								<input type="text" value={userData.name} onChange={(e) => setUserData({ ...userData, name: e.target.value })} className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 text-gray-900" placeholder="사용자 이름" />
+								<label className="block text-sm font-semibold text-gray-900 mb-1">Nickname</label>
+								<input type="text" value={userData.nickname} onChange={(e) => setUserData({ ...userData, nickname: e.target.value })} className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 text-gray-900" placeholder="사용자 닉네임" />
 							</div>
 							<div>
 								<label className="block text-sm font-semibold text-gray-900 mb-1">Code</label>

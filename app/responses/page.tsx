@@ -36,7 +36,7 @@ export default async function ResponsesPage() {
 										<pre className="mt-2 text-xs bg-gray-50 p-2 rounded overflow-auto max-h-40">{JSON.stringify(response.answers, null, 2)}</pre>
 									</details>
 								</td>
-								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{response.name || "-"}</td>
+								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{response.nickname || "-"}</td>
 								<td className="px-6 py-4 text-sm text-gray-900 max-w-xs">
 									{response.comment ? (
 										<div className="truncate" title={response.comment}>

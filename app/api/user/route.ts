@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
 		const user = await prisma.results.create({
 			data: {
-				name: body.name || null,
+				nickname: body.nickname || null,
 				code: body.code || null,
 				comment: body.comment || null,
 				answers: body.answers || {},
