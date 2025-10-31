@@ -18,7 +18,25 @@ model results {
   comment    String?
 }
 
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model PRESCRIPTION {
+  id                BigInt  @unique
+  code              String  @id
+  name              String?
+  dear              String?
+  letter            String?
+  concept           String?
+  movie             String?
+  challengeConcept  String?
+  challengeKeyword  String?
+  challengeActivity String?
+  maintainConcept   String?
+  maintainKeyword   String?
+  maintainActivity  String?
+  reconcileConcept  String?
+  reconcileKeyword  String?
+  reconcileActivity String?
+}
+
 model prescriptions {
   id                BigInt?
   code              String  @id(map: "prescription_pkey")
