@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	experimental: {
-		// Ensure Prisma native engines are handled correctly in RSC/server functions
-		serverComponentsExternalPackages: ["@prisma/client", "prisma"],
-	},
+	// Ensure Prisma native engines are bundled correctly in server functions
+	serverExternalPackages: ["@prisma/client", "prisma"],
 };
 
 export default nextConfig;
