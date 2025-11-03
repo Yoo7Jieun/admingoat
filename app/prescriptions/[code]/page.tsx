@@ -1,15 +1,11 @@
-import { prisma } from "../../../lib/prisma";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getPrescriptionFromBucket } from "@/lib/prescription";
 
 export default async function PrescriptionDetailPage({ params }: { params: Promise<{ code: string }> }) {
 	const { code } = await params;
 
-	const prescription = await prisma.PRESCRIPTION.findUnique({
-		where: {
-			code: code,
-		},
-	});
+	const prescription = await getPrescriptionFromBucket(code);
 
 	if (!prescription) {
 		notFound();

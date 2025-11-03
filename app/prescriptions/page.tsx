@@ -1,17 +1,8 @@
-import { prisma } from "../../lib/prisma";
 import Link from "next/link";
+import { getAllPrescriptionsFromBucket } from "@/lib/prescription";
 
 export default async function PrescriptionsPage() {
-	// Fetch all prescription codes from the database
-	const prescriptions = await prisma.PRESCRIPTION.findMany({
-		select: {
-			code: true,
-			name: true,
-		},
-		orderBy: {
-			code: "asc",
-		},
-	});
+	const prescriptions = await getAllPrescriptionsFromBucket();
 
 	return (
 		<div className="p-8 bg-white min-h-screen">
