@@ -6,11 +6,19 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export default async function ResponsesPage() {
-	const responses = await prisma.result.findMany({
-		orderBy: {
-			created_at: "desc",
-		},
-	});
+	let responses: any[] = [];
+	let error: string | null = null;
+
+	try {
+		responses = await prisma.result.findMany({
+			orderBy: {
+				created_at: "desc",
+			},
+		});
+	} catch (e: any) {
+		console.error("Database error:", e);
+		error = e.message;
+	}
 
 	return (
 		<div className="p-8 bg-white min-h-screen">

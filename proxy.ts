@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	// 로그인 페이지와 API 엔드포인트는 인증 없이 접근 가능
@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
 	return NextResponse.next();
 }
 
-// 미들웨어를 적용할 경로 설정
+// 프록시를 적용할 경로 설정
 export const config = {
 	matcher: [
 		/*
