@@ -2,6 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPrescriptionFromBucket } from "@/lib/prescription";
 
+// 페이지를 동적으로 렌더링 (실시간 데이터)
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function PrescriptionDetailPage({ params }: { params: Promise<{ code: string }> }) {
 	const { code } = await params;
 

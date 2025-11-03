@@ -1,6 +1,10 @@
 import { prisma } from "../../lib/prisma";
 import Link from "next/link";
 
+// 페이지를 동적으로 렌더링 (실시간 데이터)
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function ResponsesPage() {
 	const responses = await prisma.result.findMany({
 		orderBy: {

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { getAllPrescriptionsFromBucket } from "@/lib/prescription";
 
+// 페이지를 동적으로 렌더링 (실시간 데이터)
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function PrescriptionsPage() {
 	const prescriptions = await getAllPrescriptionsFromBucket();
 
