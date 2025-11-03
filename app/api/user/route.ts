@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+// API 라우트는 동적으로 처리 (빌드 시 실행 안 함)
+export const dynamic = "force-dynamic";
+
 export async function POST(request: NextRequest) {
 	try {
 		const body = await request.json();
