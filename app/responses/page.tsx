@@ -58,8 +58,8 @@ export default async function ResponsesPage() {
 										"-"
 									)}
 								</td>
-								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{new Date(response.created_at).toLocaleString("ko-KR")}</td>
-								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{new Date(response.updated_at).toLocaleString("ko-KR")}</td>
+								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{new Date(response.created_at).toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}</td>
+								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{new Date(response.updated_at).toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}</td>
 							</tr>
 						))}
 					</tbody>
